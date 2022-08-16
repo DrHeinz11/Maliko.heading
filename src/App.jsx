@@ -3,6 +3,8 @@ import HeadingImg from "./assets/Vector 632.png";
 import HeadingLogo from "./components/HeadingLogo";
 import NavIcons from "./components/NavIcons";
 import NavItems from "./components/NavItems";
+import Globo from "./components/Globo";
+import Cta from "./components/Cta";
 const points = {
   pointStart: "#ccc126",
   pointEnd: "#422ccc",
@@ -20,20 +22,39 @@ function App() {
     <chakra.div
       className="App"
       maxW={"1200px"}
+      maxH="100vh"
+      overflow={"hidden"}
       width="100%"
-      margin="0 auto"
+      margin="10px auto 0 auto"
+
       //      display={"flex"}
       //      alignItems="center"
       //      flexDirection="column"
     >
-      <Stack direction="row" spacing={{ base: 3, md: 12 }} align="center">
+      <Stack
+        direction="row"
+        spacing={{ base: 3, md: 12 }}
+        align="center"
+        justify="space-around"
+      >
         <NavIcons />
         {linkItems.map((e) => (
           <NavItems key={e.key} linkItems={e} />
         ))}
       </Stack>
       <Stack direction="row" align="center" justify="center">
-        <HeadingLogo colors={points} />
+        <Stack spacing={8} transform="translateY(-100px)">
+          <Text fontSize={22} w="fit-content" transform="translateY(65px)">
+            Hello World. I am
+          </Text>
+          <HeadingLogo colors={points} />
+          <Text fontSize={20} w="fit-content">
+            From they fine john he give of rich he. They age and draw mrs like.
+            Improving end distrusts may instantly was household applauded
+            incommode.
+          </Text>
+          <Cta />
+        </Stack>
         <Image src={HeadingImg} />
       </Stack>
     </chakra.div>
