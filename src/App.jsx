@@ -43,7 +43,7 @@ function App() {
           <NavItems key={e.key} linkItems={e} />
         ))}
       </Stack>
-      <Stack direction="row" align="center" justify="center">
+      <Stack direction="row" align="center" justify="space-between">
         <Stack
           zIndex="12"
           spacing={8}
@@ -76,13 +76,17 @@ function App() {
           </Text>
           <Cta />
         </Stack>
-        <Box boxSize={"3xl"}>
+        <Box
+          boxSize={"3xl"}
+          width="fit-content"
+          margin={{ base: "0 !important", md: "auto" }}
+        >
           <Image
             margin="0 auto"
-            minW="310px"
+            w={{ base: "325px", lg: "auto" }}
             position={{ base: "absolute", md: "inherit" }}
             zIndex="2"
-            left={{ base: "10rem", sm: "18rem", md: "none" }}
+            left={{ base: "3rem", sm: "13rem", md: "none" }}
             src={HeadingImg}
           />
         </Box>
