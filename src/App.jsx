@@ -1,6 +1,6 @@
-import { Heading, Image, Text, Stack, chakra } from "@chakra-ui/react";
+import { Heading, Image, Text, Stack, chakra, Box } from "@chakra-ui/react";
 import HeadingImg from "./assets/Vector 632.png";
-import HeadingLogo from "./components/HeadingLogo";
+import HeaderLogo from "./assets/HeaderLogo.svg";
 import NavLogo from "./components/NavLogo";
 import NavItems from "./components/NavItems";
 import Globo from "./components/Globo";
@@ -19,13 +19,13 @@ const linkItems = [
 
 function App() {
   return (
-    <chakra.div
-      className="App"
+    <Stack
       maxW={"1200px"}
+      width="100%"
       h="100vh"
       overflow={"hidden"}
-      width="100%"
       margin="0 auto"
+      px={{ base: 2, md: 5, lg: 10 }}
 
       //      display={"flex"}
       //      alignItems="center"
@@ -44,21 +44,50 @@ function App() {
         ))}
       </Stack>
       <Stack direction="row" align="center" justify="center">
-        <Stack spacing={8} transform="translateY(-100px)">
-          <Text fontSize={22} w="fit-content" transform="translateY(65px)">
+        <Stack
+          zIndex="12"
+          spacing={8}
+          transform="translateY(-100px)"
+          maxW={{ base: "100%", md: "50%" }}
+        >
+          <Text
+            fontSize={{ base: 20, md: 22 }}
+            w="fit-content"
+            transform={{
+              base: "translateY(36px)",
+              lg: "translateY(65px)",
+              md: "translateY(40px)",
+            }}
+          >
             Hello World. I am
           </Text>
-          <HeadingLogo colors={points} />
-          <Text fontSize={20} w="fit-content">
+          <Stack display="flex">
+            <Image
+              src={HeaderLogo}
+              maxW={{ base: "250px", sm: "425px" }}
+              w="100%"
+              objectFit={"cover"}
+            />
+          </Stack>
+          <Text fontSize={{ base: 14, md: 16, lg: 20 }} w="fit-content">
             From they fine john he give of rich he. They age and draw mrs like.
             Improving end distrusts may instantly was household applauded
             incommode.
           </Text>
           <Cta />
         </Stack>
-        <Image h="fit-content" src={HeadingImg} />
+        <Box boxSize={"3xl"}>
+          <Image
+            margin="0 auto"
+            minW="310px"
+            position={{ base: "absolute", md: "inherit" }}
+            zIndex="2"
+            left={{ base: "10rem", sm: "18rem", md: "none" }}
+            src={HeadingImg}
+          />
+        </Box>
       </Stack>
-    </chakra.div>
+    </Stack>
   );
 }
 
