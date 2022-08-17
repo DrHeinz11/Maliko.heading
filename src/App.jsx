@@ -1,7 +1,7 @@
 import { Heading, Image, Text, Stack, chakra } from "@chakra-ui/react";
 import HeadingImg from "./assets/Vector 632.png";
 import HeadingLogo from "./components/HeadingLogo";
-import NavIcons from "./components/NavIcons";
+import NavLogo from "./components/NavLogo";
 import NavItems from "./components/NavItems";
 import Globo from "./components/Globo";
 import Cta from "./components/Cta";
@@ -22,10 +22,10 @@ function App() {
     <chakra.div
       className="App"
       maxW={"1200px"}
-      maxH="100vh"
+      h="100vh"
       overflow={"hidden"}
       width="100%"
-      margin="10px auto 0 auto"
+      margin="0 auto"
 
       //      display={"flex"}
       //      alignItems="center"
@@ -34,10 +34,11 @@ function App() {
       <Stack
         direction="row"
         spacing={{ base: 3, md: 12 }}
+        py={2}
         align="center"
-        justify="space-around"
+        justify="space-between"
       >
-        <NavIcons />
+        <NavLogo />
         {linkItems.map((e) => (
           <NavItems key={e.key} linkItems={e} />
         ))}
@@ -55,7 +56,7 @@ function App() {
           </Text>
           <Cta />
         </Stack>
-        <Image src={HeadingImg} />
+        <Image h="fit-content" src={HeadingImg} />
       </Stack>
     </chakra.div>
   );
